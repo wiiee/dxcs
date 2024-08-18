@@ -1,16 +1,58 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav mode="side" class="sidenav" opened #sidenav>
-    <mat-toolbar>大熊财税</mat-toolbar>
+<mat-toolbar class="bg-info">
+  <h1 class="ms-2">大熊财税企业管理（深圳）有限公司</h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav #sidenav mode="side" opened="true">
     <mat-nav-list>
-      <a mat-list-item routerLink="/sale" routerLinkActive="active" ariaCurrentWhenActive="page">销售部</a>
-      <a mat-list-item routerLink="/tax" routerLinkActive="active" ariaCurrentWhenActive="page">工商税务部</a>
-      <a mat-list-item routerLink="/accountant" routerLinkActive="active" ariaCurrentWhenActive="page">会计业务</a>
-      <a mat-list-item routerLink="/customer" routerLinkActive="active" ariaCurrentWhenActive="page">客户维护部</a>
-      <a mat-list-item routerLink="/company" routerLinkActive="active" ariaCurrentWhenActive="page">公司总览</a>
+      <a class="category" mat-list-item routerLink="/my-customer" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <div class="row">
+              <div class="col-3 pt-1"><mat-icon fontIcon="info"></mat-icon></div>
+              <div class="col-9 pt-1 ps-3 fw-bold">工作台</div>
+            </div>
+      </a>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <div class="row w-100">
+            <div class="col-4 pt-1"><mat-icon fontIcon="currency_exchange"></mat-icon></div>
+            <div class="col-8 pt-1">销售部</div>
+          </div>
+        </mat-expansion-panel-header>
+        <div>
+          <a mat-list-item routerLink="/current-customer" routerLinkActive="active"
+            ariaCurrentWhenActive="page">当前客户</a>
+          <a mat-list-item routerLink="/my-customer" routerLinkActive="active" ariaCurrentWhenActive="page">我的客户</a>
+          <a mat-list-item href="...">大熊公海</a>
+        </div>
+      </mat-expansion-panel>
+    </mat-nav-list>
+    <mat-nav-list>
+      <a class="category" mat-list-item routerLink="/my-customer" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <div class="row">
+              <div class="col-3 pt-1"><mat-icon fontIcon="apartment"></mat-icon></div>
+              <div class="col-9 pt-1 ps-3 fw-bold">工商税务部</div>
+            </div>
+      </a>
+    </mat-nav-list>
+    <mat-nav-list>
+      <a class="category" mat-list-item routerLink="/my-customer" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <div class="row">
+              <div class="col-3 pt-1"><mat-icon fontIcon="money"></mat-icon></div>
+              <div class="col-9 pt-1 ps-3 fw-bold">会计业务</div>
+            </div>
+      </a>
+    </mat-nav-list>
+    <mat-nav-list>
+      <a class="category" mat-list-item routerLink="/my-customer" routerLinkActive="active" ariaCurrentWhenActive="page">
+            <div class="row">
+              <div class="col-3 pt-1"><mat-icon fontIcon="groups"></mat-icon></div>
+              <div class="col-9 pt-1 ps-3 fw-bold">客户维护部</div>
+            </div>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <!-- Add Content Here -->
-     <router-outlet />
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

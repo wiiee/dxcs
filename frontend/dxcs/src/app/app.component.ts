@@ -1,28 +1,26 @@
-import { Component, inject } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AsyncPipe } from '@angular/common';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+import { CommonModule } from '@angular/common';
+import { Component, ViewChild } from '@angular/core';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    RouterLink,
-    RouterLinkActive,     
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
     MatListModule,
+    CommonModule,
     MatIconModule,
-    AsyncPipe,],
+    MatSidenavModule,
+    MatToolbarModule,
+    MatExpansionModule,
+    RouterLink,
+    RouterLinkActive
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
