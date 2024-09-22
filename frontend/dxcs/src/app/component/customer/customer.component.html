@@ -1,56 +1,57 @@
-<h2 mat-dialog-title>新增线索</h2>
-<mat-dialog-content class="mat-typography">
-    <div class="row mt-1">
-        <div class="col-3">客户名称</div>
-        <div class="col-9">
-            <input type="text" class="form-control" [(ngModel)]="customer.name" />
-        </div>
-    </div>
-    <div class="row mt-1">
-        <div class="col-3">公司名</div>
-        <div class="col-9">
-            <input type="text" class="form-control" [(ngModel)]="customer.companyName" />
-        </div>
-    </div>
-    <div class="row mt-1">
-        <div class="col-3">手机</div>
-        <div class="col-9">
-            <input type="text" class="form-control" [(ngModel)]="customer.mobile" />
-        </div>
-    </div>
-    <div class="row mt-1">
-        <div class="col-3">微信</div>
-        <div class="col-9">
-            <input type="text" class="form-control" [(ngModel)]="customer.weChat" />
-        </div>
-    </div>
+<h2 mat-dialog-title>{{ customer.id ? "修改线索" : "新增线索"}}</h2>
 
-    <div class="row mt-1">
-        <div class="col-3">其他联系方式</div>
-        <div class="col-9">
-            <input type="text" class="form-control" [(ngModel)]="customer.other" />
-        </div>
+<div class="row mt-2">
+    <div class="col-3">客户名称</div>
+    <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="customer.name" />
     </div>
-    <div class="row mt-1">
-        <div class="col-3">来源</div>
-        <div class="col-9">
-            <input type="text" class="form-control" [(ngModel)]="customer.source" />
-        </div>
+</div>
+<div class="row mt-2">
+    <div class="col-3">公司名</div>
+    <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="customer.companyName" />
     </div>
-    <div class="row mt-1">
-        <div class="col-3">需求</div>
-        <div class="col-9">
-            <input type="text" class="form-control" [(ngModel)]="customer.requirement" />
-        </div>
+</div>
+<div class="row mt-2">
+    <div class="col-3">手机</div>
+    <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="customer.mobile" />
     </div>
-    <div class="row mt-1">
-        <div class="col-3">跟进情况</div>
-        <div class="col-9">
-            <input type="text" class="form-control" [(ngModel)]="customer.followUp" />
-        </div>
+</div>
+<div class="row mt-2">
+    <div class="col-3">微信</div>
+    <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="customer.weChat" />
     </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">取消</button>
-    <button mat-button (click)="save()" cdkFocusInitial>保存</button>
-</mat-dialog-actions>
+</div>
+
+<div class="row mt-2">
+    <div class="col-3">其他联系方式</div>
+    <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="customer.other" />
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-3">来源</div>
+    <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="customer.source" />
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-3">需求</div>
+    <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="customer.requirement" />
+    </div>
+</div>
+<div class="row my-2">
+    <div class="col-3">跟进情况</div>
+    <div class="col-9">
+        <input type="text" class="form-control" [(ngModel)]="customer.followUp" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-8"></div>
+    <div class="col-2"><button mat-button (click)="onNoClick()">取消</button></div>
+    <div class="col-2"><button mat-button (click)="save()" cdkFocusInitial>保存</button></div>
+</div>

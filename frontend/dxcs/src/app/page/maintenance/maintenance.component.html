@@ -1,0 +1,93 @@
+<div class="container">
+    <!-- Content here -->
+    <div class="row mt-4">
+        <div class="col-3"></div>
+        <div class="col-6 text-center">
+            <mat-form-field appearance="outline" class="w-100">
+                <input matInput placeholder="全局搜索" type="text" />
+                <button mat-icon-button matSuffix>
+                    <mat-icon fontIcon="search"></mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="待认领客户">
+            <div class="row mt-3">
+                <div class="col">
+                    <mat-card appearance="outlined">
+        
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button mat-flat-button>领取业务</button>
+                                    <button mat-flat-button class="mx-3">分配业务</button>
+                                </div>
+                                <div class="col-6">
+                                    <button mat-flat-button class="float-end" (click)="addCustomer()"><mat-icon
+                                            fontIcon="add"></mat-icon>新增业务</button>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col">
+                                    <table mat-table [dataSource]="customers" class="mat-elevation-z8">
+                                        <!--- Note that these columns can be defined in any order.
+                                              The actual rendered columns are set as a property on the row definition" -->
+                                        <ng-container matColumnDef="checkbox">
+                                            <th mat-header-cell *matHeaderCellDef> 选择 </th>
+                                            <td mat-cell *matCellDef="let element">
+                                                <mat-checkbox></mat-checkbox>
+                                            </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="name">
+                                            <th mat-header-cell *matHeaderCellDef> 客户名称 </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="companyName">
+                                            <th mat-header-cell *matHeaderCellDef> 公司名称 </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="requirement">
+                                            <th mat-header-cell *matHeaderCellDef> 需求 </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.requirement}} </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="mobile">
+                                            <th mat-header-cell *matHeaderCellDef> 电话 </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="followUpUser">
+                                            <th mat-header-cell *matHeaderCellDef> 跟进人 </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.followUpUser}} </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="createdDate">
+                                            <th mat-header-cell *matHeaderCellDef> 创建日期 </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+                                        </ng-container>
+        
+                                        <ng-container matColumnDef="followUpDate">
+                                            <th mat-header-cell *matHeaderCellDef> 跟进日期 </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.followUpDate}} </td>
+                                        </ng-container>
+        
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="会计续费部">Content 2</mat-tab>
+        <mat-tab label="地址挂靠时间">Content 2</mat-tab>
+        <mat-tab label="香港公司年审时间">Content 2</mat-tab>
+      </mat-tab-group>
+</div>

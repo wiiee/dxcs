@@ -1,10 +1,11 @@
-import { Component, inject, model } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
+import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogTitle } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Customer } from '../../entity/customer';
+import { CustomerService } from '../../service/customer.service';
 
 @Component({
   selector: 'app-customer',
@@ -23,12 +24,21 @@ import { Customer } from '../../entity/customer';
   styleUrl: './customer.component.scss'
 })
 export class CustomerComponent {
-  customer = new Customer('', '', '', '', '', '', '', '', '', '', '', '');
-  readonly dialogRef = inject(MatDialogRef<CustomerComponent>);
+  @Input() customer = new Customer('', '', '', '', '', '', '', '', '', '', '', '');
+  @Output()
+  customerClosed = new EventEmitter<void>();
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  constructor(private customerService: CustomerService) {
   }
 
-  save(): void {}
+  onNoClick(): void {
+    this.customerClosed.emit();
+  }
+
+  save(): void {
+    this.customerService.save(this.customer).subscribe(result => {
+      console.log("保存成功");
+      this.customerClosed.emit()
+    });
+  }
 }

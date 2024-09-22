@@ -1,0 +1,111 @@
+<div class="container">
+    <!-- Content here -->
+    <div class="row mt-4">
+        <div class="col-3"></div>
+        <div class="col-6 text-center">
+            <mat-form-field appearance="outline" class="w-100">
+                <input matInput placeholder="全局搜索" type="text" />
+                <button mat-icon-button matSuffix>
+                    <mat-icon fontIcon="search"></mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="数据看板">
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <mat-card appearance="outlined">
+                        <mat-card-content>业务看板</mat-card-content>
+                      </mat-card>
+                </div>
+            </div>
+        
+            <div class="row mt-4">
+                <div class="col-3 text-center">
+                    <mat-card appearance="outlined">
+                        <mat-card-content>
+                            <div>新增线索</div>
+                            <div class="mt-4 fs-3">14</div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+                <div class="col-3 text-center">
+                    <mat-card appearance="outlined">
+                        <mat-card-content>
+                            <div>新增客户</div>
+                            <div class="mt-4 fs-3">14</div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+                <div class="col-3 text-center">
+                    <mat-card appearance="outlined">
+                        <mat-card-content>
+                            <div>今日成交金额</div>
+                            <div class="mt-4"><span class="fs-3">888</span>元</div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+                <div class="col-3 text-center">
+                    <mat-card appearance="outlined">
+                        <mat-card-content>
+                            <div>本月成交金额</div>
+                            <div class="mt-4"><span class="fs-3">88888</span>元</div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+            </div>
+        
+            <div class="row mt-4">
+                <div class="col-4">
+                    <mat-card appearance="outlined" class="h-100">
+                        <mat-card-content>
+                            <div>工商部</div>
+                            <div class="mt-2 text-center">
+                                <mat-chip class="w-50">待认领业务 8</mat-chip>
+                            </div>
+                            <div class="mt-2 text-center">
+                                <mat-chip class="w-50">正在办理业务 8</mat-chip>
+                            </div>
+                            <div class="mt-2 text-center">
+                                <mat-chip class="w-50">本月完结业务 8</mat-chip>
+                            </div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+                <div class="col-2">
+                    <mat-card appearance="outlined" class="h-100">
+                        <mat-card-content>
+                            <div>会计部</div>
+                            <div class="mt-2 text-center">
+                                本月新认领用户
+                            </div>
+                            <div class="mt-2 text-center fs-3">
+                                2
+                            </div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+                <div class="col-6">
+                    <mat-card appearance="outlined" class="h-100">
+                        <mat-card-content>
+                            <div>客户维护部</div>
+                            <div class="mt-2 text-center">
+                                <mat-chip class="w-50">待认领业务 8</mat-chip>
+                            </div>
+                            <div class="mt-2 text-center">
+                                <mat-chip class="w-50">正在办理业务 8</mat-chip>
+                            </div>
+                            <div class="mt-2 text-center">
+                                <mat-chip class="w-50">本月完结业务 8</mat-chip>
+                            </div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="客户列表">Content 2</mat-tab>
+        <mat-tab label="维护明细">Content 3</mat-tab>
+      </mat-tab-group>
+</div>
